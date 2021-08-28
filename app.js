@@ -40,6 +40,16 @@ app.use('/register', registerRouter)
 app.use(express.static(__dirname + '/public'));
 
 
+app.get('/', (req, res) => {
+  res.render('index')
+})
+
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+
+
+
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
 });
