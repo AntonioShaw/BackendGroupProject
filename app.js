@@ -62,6 +62,20 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
+app.get('/men', (req, res) => {
+  res.render('men')
+})
+
+app.get('/women', (req, res) => {
+  res.render('women')
+})
+app.get('/newreleases', (req, res) => {
+  res.render('newreleases')
+})
+
+app.get('/menAccessories', (req, res) => {
+  res.render('menAccessories')
+})
 
 //mens-shoe page code
 app.get('/mens-shoes', (req, res)=>{
@@ -86,6 +100,9 @@ app.post('/mens-shoes', (req, res)=>{
 })
 //mens-shoe code ends here
 
+app.get('/womenAccessories', (req, res) => {
+  res.render('womenAccessories')
+})
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
 });
