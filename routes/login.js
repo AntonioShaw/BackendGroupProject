@@ -17,12 +17,12 @@ router.post('/sign-in', (req, res) => {
                 res.redirect('/')
             } else {
                 // if passwords do not match send an error message (DB)
-                res.render('menu', {errorMessage: "Password is incorrect"})
+                res.render('index', {errorMessage: "Password is incorrect"})
             }
         })
     }) .catch((error) => {
         // if no user is found send an error message (DB)
-        res.render('menu', {errorMessage: "User does not exist"})
+        res.render('index', {errorMessage: "User does not exist"})
     })
 })
 
