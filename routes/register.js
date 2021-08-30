@@ -14,20 +14,20 @@ router.post('/add-user', (req, res) => {
     const dob = req.body.dob
     var password
 
-    // verify if user entered the same string for password and confirmPassword text fields
+    // verify if user entered the same string for password and confirmPassword text fields (DB)
     if (req.body.password == req.body.confirmPassword) {
         password = req.body.password
     } else {
-        // send error message if password strings are not identical
+        // send error message if password strings are not identical (DB)
         res.render('register', {passwordErrorMessage: 'Passwords do not match.'})
     }
 
-    // encrypt password to be stored in Users table
+    // encrypt password to be stored in Users table (DB)
     bcrypt.genSalt(10, function(error, salt) {
         if(!error) {
-            bcrypt.hash(password, salt, function(error, hash) {
-                if(!error) {
-                    // create user object
+            bcrypt.hash(password, salt, function(hashError, hash) {
+                if(!hashError) {
+                    // create user object (DB)
                     const user = models.User.build({
                         username: username,
                         password: hash,
@@ -36,7 +36,7 @@ router.post('/add-user', (req, res) => {
                         last_name: lastName,
                         date_of_birth: dob
                     })
-                    // save user object to user table
+                    // save user object to user table (DB)
                     user.save()
                     .then(savedUser => {
                         console.log("New user has registered.")
