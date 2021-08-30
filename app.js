@@ -6,10 +6,14 @@ const mustacheExpress = require('mustache-express');
 
 const path = require('path');
 
+const session = require('express-session')
+
 global.models = require('./models')
 
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
+// import login.js route (DB)
+const loginRouter = require('./routes/login')
 
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
@@ -33,7 +37,14 @@ app.set('view engine', 'mustache');
 // tell server to use urlencoded for body parsing (DB)
 app.use(express.urlencoded())
 
+app.use(session({
+  secret: "SuperSecretKeyThatNoOneWillGuess",
+  saveUninitialized: true,
+  resave: true
+}))
+
 app.use('/register', registerRouter)
+app.use('/login', loginRouter)
 
 
 // set path for static css and js files (DB)
