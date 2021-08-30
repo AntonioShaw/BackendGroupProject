@@ -21,8 +21,6 @@ const authenticate = require('./middleware/authentication')
 const VIEWS_PATH = path.join(__dirname, './views');
 
 
-
-
 // set up express to use mustache-express as template page (DB)
 app.engine ('mustache', mustacheExpress(VIEWS_PATH + '/partials','.mustache'));
 // set location of pages to views directory (DB)
