@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{> header}}
+
+    <link rel="stylesheet" href="/css/mens_shoe.css">
+    <title>Document</title>
+</head>
+<body>
+    {{> menu}}
+    <div id="main-container">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVSN4Q2YsKzJSvFouLICL_522wVXl4Trzmsw&usqp=CAU" alt="soccer shoes">
+            <h3>Soccer Shoes</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, iusto hic veniam incidunt quae consequatur consectetur nostrum est delectus! Reprehenderit provident cum neque sit sed dolores consequuntur aperiam sint perspiciatis.</p>
+            <form action="/mens-shoes" method="POST">
+                <button class="addBttn">Add to cart</button>
+            </form>
+        </div> 
+    </div>
+    <footer>
+        {{> footer}}
+    </footer>
+</body>
+</html> 

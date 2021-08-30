@@ -10,7 +10,6 @@ global.models = require('./models')
 
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
-
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
 
@@ -49,6 +48,28 @@ app.get('/login', (req, res) => {
 })
 
 
+//mens-shoe page code
+app.get('/mens-shoes', (req, res)=>{
+  res.render('mens-shoes')
+})
+app.post('/mens-shoes', (req, res)=>{
+  //posting to the cart
+  const price = req.body.price
+  const title = req.body.title
+  const sku = req.body.sku
+
+  //save it to the database
+  const inventory = models.Inventory.build({
+    title: title,
+    sku: sku,
+    price: price
+  })
+
+    //save to the cart
+  cart.save()
+  
+})
+//mens-shoe code ends here
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
