@@ -13,10 +13,11 @@ global.models = require('./models')
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
 
-
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
 
+// import logout.js route (DB)
+const logoutRouter = require('./routes/logout')
 
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
@@ -44,8 +45,16 @@ app.use(session({
   resave: true
 }))
 
+// middleware that will toggle the menu options when authenticated (DB)
+app.use((req, res, next) => {
+  res.locals.authenticated = req.session.user == null ? false : true
+  next()
+})
+
+// tell the server which Router to use for each url route (DB)
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
 
 
 // set path for static css and js files (DB)
