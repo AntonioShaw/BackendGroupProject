@@ -28,17 +28,15 @@ const authenticate = require('./middleware/authentication')
 const VIEWS_PATH = path.join(__dirname, './views');
 
 
-
-
 // set up express to use mustache-express as template page (DB)
-app.engine ('mustache', mustacheExpress(VIEWS_PATH + '/partials','.mustache'));
+app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'));
 // set location of pages to views directory (DB)
 app.set('views', VIEWS_PATH);
 // set page extention to mustache (DB)
 app.set('view engine', 'mustache');
 
 // tell server to use urlencoded for body parsing (DB)
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: false }))
 
 app.use(session({
   secret: "SuperSecretKeyThatNoOneWillGuess",
@@ -78,10 +76,10 @@ app.get('/menAccessories', (req, res) => {
 })
 
 //mens-shoe page code
-app.get('/mens-shoes', (req, res)=>{
+app.get('/mens-shoes', (req, res) => {
   res.render('mens-shoes')
 })
-app.post('/mens-shoes', (req, res)=>{
+app.post('/mens-shoes', (req, res) => {
   //posting to the cart
   const price = req.body.price
   const title = req.body.title
@@ -94,9 +92,9 @@ app.post('/mens-shoes', (req, res)=>{
     price: price
   })
 
-    //save to the cart
+  //save to the cart
   cart.save()
-  
+
 })
 //mens-shoe code ends here
 
