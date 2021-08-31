@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use(session({
   secret: "SuperSecretKeyThatNoOneWillGuess",
-  saveUninitialized: true,
+  saveUninitialized: false,
   resave: true
 }))
 
