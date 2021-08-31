@@ -3,7 +3,7 @@
 
 <head>
   <title>Login</title>
-  
+
   {{>header}}
 
   <link rel="stylesheet" href="/css/login.css">
@@ -34,6 +34,13 @@
     </div>
   </form>
 
+  <div class="container">
+    <form method="POST" action="/login/sign-in">
+      <input type="hidden" name="username" value="guest">
+      <input type="hidden" name="password" value="guest1">
+      <button type="submit" class="btn btn-success">Login as Guest</button>
+    </form>
+  </div>
 
 
   {{>footer}}
