@@ -46,84 +46,82 @@
     border-radius: 10px;
     background-color: rgb(17, 11, 105);
   }
-  
-  #container {
+  #menu {
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+    /* font-style: italic; */
+    font-weight: 80em;
+    font-size: 25px;
+    color: silver;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 10px;
+    background-color: rgb(17, 11, 105);
+  }
+
+  #outerContainer {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 0;
+    top: 8%;
     bottom: 0;
     left: 0;
     right: 0;
     padding: auto;
     align-items: center;
     height: 90%;
-    width: 85%;
+    width: 95%;
     margin: auto;
     /* margin-bottom: auto;
     margin-left: auto;
     margin-right: auto; */
     overflow: auto;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     background-color: rgba(245, 245, 245, 0.568);
   }
-  
+    /* .container {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      height: 35px;
+      width: 20px;
+      background-color: blanchedalmond;
+    } */
+  .One {
+    background-color: white;
+    position: relative;
+    width: 33%;
+  }
+  .Two {
+    background-color: whitesmoke;
+  }
+  .Three {
+    background-color: gray;
+  }
 
-  
-  #tasksUL {
-    display: flex;
-    flex-direction: column;
-    list-style: upper-roman;
-    font-size: 50px;
-    padding: auto;
-    align-items: center;
-    height: 600px;
-    width: 75%;
-    margin-top: 90px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(223, 226, 240);
-    border-style: groove;
-    border-width: 20px;
-    border-radius: 15px;
-    border-color: rgb(17, 11, 105);
+  .URL {
+    width: 29%;
+    height: auto;
   }
-  
-  #submitButton {
-    font-size: 30px;
-    margin: auto;
-    background-color: darkturquoise;
-    border-radius: 15px;
-  }
-  
-  #taskName {
-    font-size: 30px;
-    margin: auto;
-    border-radius: 15px;
-  }
-  
-  #priorityDropdown {
-    background-color: rgb(173, 152, 251);
-    font-size: 30px;
-    margin: auto;
-    border-radius: 15px;
-  }
-  
-  #addTask {
+
+  .bidBtn {
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
     color: white;
-    font-size: 30px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 80%;
-    margin-top: auto;
-    margin-bottom: 75px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px;
-    background-color: rgb(199, 195, 221);
-    /* opacity: 0.5; */
+    font-size: 10px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
   }
+  
   
   #deleteButton {
     font-size: 30px;
