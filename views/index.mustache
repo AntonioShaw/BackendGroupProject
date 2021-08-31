@@ -1,32 +1,46 @@
 <html lang="en">
+
 <head>
     {{> header}}
 
-    
-<link rel="stylesheet" type="text/css" href="css/index.css"> 
-<script type="text/javascript" src="jquery.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
 </head>
+
 <body id="indexBody">
-    <div id="headerDiv">
-        <img src="https://spng.subpng.com/20180901/ygc/kisspng-track-field-clip-art-foot-track-spikes-running-a-propos-de-nous-nuukik-5b8a1b3da5c0d1.4140070015357775976789.jpg" alt="A line drawing of winged sandals">
+    <!-- <div id="headerDiv">
         <h1 id="header">Talaria Footwear</a></h1>
+    </div> -->
+
+    <div id="menu">
+        {{> menu}}
     </div>
-
-<div id="container">
-    {{> menu}}
-
-    <h3 id="cart">View Cart</h3>
-
-
-
-
-</div>
-
-
-    
-    {{> footer}}
-
+    <div id="outerContainer">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4 One">
+                Shoebox1
+                <img class="URL" src="https://tinyurl.com/2cv3fyms" alt="Black dress shoe with a blue sole">
+                <button class="bidBtn">Bid</button>
+              </div>
+              <div class="col-md-4 Two">
+                Shoebox2
+                <img class="URL" src="https://tinyurl.com/9sn6nc6v" alt="Gray canvas sneakers with a white sole">
+                <button class="bidBtn">Bid</button>
+              </div>
+              <div class="col-md-4 Three">
+                Shoebox3
+                <img class="URL" src="https://tinyurl.com/bxrkn3bu" alt="Tan boat shoes with a cream sole">
+                <button class="bidBtn">Bid</button>
+              </div>
+              <!-- <div class="col">
+                Shoebox4
+              </div> -->
+            </div>
+          </div>    
+    </div>
 </body>
 
 </html>
