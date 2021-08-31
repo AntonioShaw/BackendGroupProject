@@ -60,6 +60,8 @@ app.use('/logout', logoutRouter)
 // set path for static css and js files (DB)
 app.use(express.static(__dirname + '/public'));
 
+// static folder for images
+app.use('/uploads', express.static('uploads'))
 
 app.get('/', (req, res) => {
   res.render('index')
@@ -84,6 +86,16 @@ app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
 })
 
+// render the users-post
+app.get('/users-post', (req, res)=>{
+  res.render('users-post')
+})
+// post to the shoe table
+app.post('/users-post', (req, res)=>{
+  const name = req.body.name
+  const description = req.body.name
+  const size = req.body.size
+  const style = req.body.style
 //mens-shoe page code
 app.get('/mens-shoes', (req, res) => {
   res.render('mens-shoes')
@@ -91,21 +103,28 @@ app.get('/mens-shoes', (req, res) => {
 app.post('/mens-shoes', (req, res) => {
   //posting to the cart
   const price = req.body.price
-  const title = req.body.title
-  const sku = req.body.sku
+  const image = req.body.image
 
-  //save it to the database
-  const inventory = models.Inventory.build({
-    title: title,
-    sku: sku,
-    price: price
+  let shoetable = models.ShoeTable.build({
+    name: name,
+    description: description,
+    size: size,
+    style: style,
+    price: price,
+    image: image
   })
+  shoetable.save()
+  res.redirect('mens')
+})
+  
+// get delete post
+app.get('/delete-post', (req, res)=>{
+  res.render('delete-post')
 
   //save to the cart
   cart.save()
-
 })
-//mens-shoe code ends here
+
 
 app.get('/womenAccessories', (req, res) => {
   res.render('womenAccessories')

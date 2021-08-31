@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/users_post.css">
+    <title>Post Page</title>
+</head>
+<body>
+    <div id="mainContainer">
+        <form action="/users-post" method="POST">
+            <label for="">Image of product</label>
+            <br>
+            <input type="file" name="image">
+            <br>
+            <button type="submit">Add Image</button>
+            <br>
+            <label for="">Title</label>
+            <br>
+            <input type="text" name="name">
+            <br>
+            <label for="">Style</label>
+            <br>
+            <input type="text" name="style">
+            <br>
+            <label for="">Shoe Size</label>
+            <br>
+            <input type="text" name="size">
+            <br>
+            <label for="">Asking Price</label>
+            <br>
+            <input type="text" name="price" id="">
+            <br>
+            <label for="">Description</label>
+            <br>
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+            <br>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+</body>
+</html>
