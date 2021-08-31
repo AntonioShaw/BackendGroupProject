@@ -30,7 +30,11 @@
             <div class="form-group">
                 <label for="username"><strong>Username:</strong></label>
                 <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
-                <p>{{usernameTakenMessage}}</p>
+                {{#usernameErrorMessage}}
+                <div class="alert alert-danger" role="alert">
+                    {{usernameErrorMessage}}
+                </div>
+                {{/usernameErrorMessage}}
             </div>
             <div class="form-group">
                 <label for="password"><strong>Password:</strong></label>
@@ -40,7 +44,11 @@
                 <label for="confirmPassword"><strong>Confirm Password:</strong></label>
                 <input type="password" name="confirmPassword" class="form-control" placeholder="Enter Same Password"
                     required>
-                <p>{{passwordErrorMessage}}</p>
+                {{#passwordErrorMessage}}
+                <div class="alert alert-danger" role="alert">
+                    {{passwordErrorMessage}}
+                </div>
+                {{/passwordErrorMessage}}
             </div>
             <div class="form-group">
                 <label for="email"><strong>Email:</strong></label>

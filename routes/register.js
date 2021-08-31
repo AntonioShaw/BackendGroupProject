@@ -52,7 +52,7 @@ router.post('/add-user', async (req, res) => {
                 // save user object to user table (DB)
                 let savedUser = await user.save()
                 if (savedUser != null) {
-                    res.redirect('/')
+                    res.redirect('/login')
                 } else {
                     res.render('register', { usernameErrorMessage: "Username already exists" })
                 }
