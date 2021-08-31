@@ -67,9 +67,6 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/login', (req, res) => {
-  res.render('login')
-})
 
 app.get('/men', (req, res) => {
   res.render('men')
@@ -96,6 +93,8 @@ app.post('/users-post', (req, res)=>{
   const description = req.body.name
   const size = req.body.size
   const style = req.body.style
+})
+
 //mens-shoe page code
 app.get('/mens-shoes', (req, res) => {
   res.render('mens-shoes')
@@ -129,6 +128,7 @@ app.get('/delete-post', (req, res)=>{
 app.get('/womenAccessories', (req, res) => {
   res.render('womenAccessories')
 })
+
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
-});
+})
