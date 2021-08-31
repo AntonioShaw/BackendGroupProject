@@ -85,7 +85,7 @@ app.get('/users-post', (req, res)=>{
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
   const name = req.body.name
-  const description = req.body.name
+  const description = req.body.description
   const size = req.body.size
   const style = req.body.style
   const price = req.body.price
