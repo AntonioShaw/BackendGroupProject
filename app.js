@@ -77,6 +77,9 @@ app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
 })
 
+app.get('/womenAccessories', (req, res) => {
+  res.render('womenAccessories')
+})
 //mens-shoe page code
 app.get('/mens-shoes', (req, res)=>{
   res.render('mens-shoes')
@@ -100,9 +103,7 @@ app.post('/mens-shoes', (req, res)=>{
 })
 //mens-shoe code ends here
 
-app.get('/womenAccessories', (req, res) => {
-  res.render('womenAccessories')
-})
+
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
 });
