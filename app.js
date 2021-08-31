@@ -101,7 +101,7 @@ app.post('/users-post', (req, res)=>{
 
   })
   shoetable.save()
-  res.redirect('mens')
+  res.redirect('index') //probably change mens to index
 })
 
 app.get('/womenAccessories', (req, res) => {
