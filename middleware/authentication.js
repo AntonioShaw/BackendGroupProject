@@ -3,14 +3,15 @@
 function authenticate (req, res, next) {
     console.log('Authenticate Middleware')
     if(req.session) {
-        if(req.session.userId) {
-            console.log(req.session.userId)
+        if(req.session.user) {
+            console.log(req.session.user)
+            res.locals.authenticated = true
             next()
         } else {
-            res.redirect('/')
+            res.redirect('/login')
         }
     } else {
-        res.redirect('/')
+        res.redirect('/login')
     }
 }
 

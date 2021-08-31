@@ -10,7 +10,11 @@ module.exports = {
       },
       username: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: {
+          args: true,
+          msg: "Username is already in use."
+        }
       },
       password: {
         allowNull: false,

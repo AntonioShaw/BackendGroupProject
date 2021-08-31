@@ -13,10 +13,11 @@ global.models = require('./models')
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
 
-
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
 
+// import logout.js route (DB)
+const logoutRouter = require('./routes/logout')
 
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
@@ -28,26 +29,32 @@ const authenticate = require('./middleware/authentication')
 const VIEWS_PATH = path.join(__dirname, './views');
 
 
-
-
 // set up express to use mustache-express as template page (DB)
-app.engine ('mustache', mustacheExpress(VIEWS_PATH + '/partials','.mustache'));
+app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'));
 // set location of pages to views directory (DB)
 app.set('views', VIEWS_PATH);
 // set page extention to mustache (DB)
 app.set('view engine', 'mustache');
 
 // tell server to use urlencoded for body parsing (DB)
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: false }))
 
 app.use(session({
   secret: "SuperSecretKeyThatNoOneWillGuess",
-  saveUninitialized: true,
+  saveUninitialized: false,
   resave: true
 }))
 
+// middleware that will toggle the menu options when authenticated (DB)
+app.use((req, res, next) => {
+  res.locals.authenticated = req.session.user == null ? false : true
+  next()
+})
+
+// tell the server which Router to use for each url route (DB)
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
 
 
 // set path for static css and js files (DB)
@@ -78,6 +85,7 @@ app.get('/newreleases', (req, res) => {
 app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
 })
+
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
@@ -88,6 +96,12 @@ app.post('/users-post', (req, res)=>{
   const description = req.body.name
   const size = req.body.size
   const style = req.body.style
+//mens-shoe page code
+app.get('/mens-shoes', (req, res) => {
+  res.render('mens-shoes')
+})
+app.post('/mens-shoes', (req, res) => {
+  //posting to the cart
   const price = req.body.price
   const image = req.body.image
 
@@ -98,15 +112,17 @@ app.post('/users-post', (req, res)=>{
     style: style,
     price: price,
     image: image
-
   })
   shoetable.save()
   res.redirect('mens')
 })
-
+  
 // get delete post
 app.get('/delete-post', (req, res)=>{
   res.render('delete-post')
+
+  //save to the cart
+  cart.save()
 })
 
 
