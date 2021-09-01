@@ -1,16 +1,22 @@
 body {
     margin: 0px;
     padding: 0px;
+    padding-bottom: 100px;
 }
 
-#mainContainer {
+body > form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 10px;
+    flex-wrap: nowrap;
+    width: 50%;
+    margin: auto;
 }
 
-#mainContainer > form > input {
-    margin-bottom: 5px;
+body > form > label {
+    display: block;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    font-size: 2em;
+    font-weight: bold;
 }
-

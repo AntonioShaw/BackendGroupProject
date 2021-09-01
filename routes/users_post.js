@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const bcrypt = require('bycrypt')
-const models = require('./models')
 
-const SALT_ROUND = 10
+router.get('/users-post', (req, res)=>{
+    res.render('users-post')
+})
 
 
 
-module.exports
+module.exports = router

@@ -10,27 +10,6 @@ router.get('/add-product',(req,res) => {
   res.render('users/add-product', {className: "product-preview-image-invisible"})
 })
 
-router.post('/update-product', async (req,res) => {
-
-  const productId = req.body.productId
-  const title = req.body.title
-  const description = req.body.description
-  const price = parseFloat(req.body.price)
-
-  const result = await models.Product.update({
-    title: title,
-    description: description,
-    price: price,
-    imageURL: uniqueFilename
-  },{
-    where: {
-      id: productId
-    }
-  })
-
-  res.redirect('/users/products')
-
-})
 
 router.post('/upload/edit/:productId',(req,res) => {
 
@@ -128,6 +107,5 @@ router.post('/upload',(req,res) => {
   })
 
 })
-
 
 module.exports = router
