@@ -117,15 +117,9 @@ app.post('/users-post', (req, res)=>{
     description: description,
     size: size,
     style: style,
-<<<<<<< HEAD
     price: price,
     image: image,
     user_id: userId
-=======
-    image: image
-    
-
->>>>>>> master
 
   })
   shoetable.save()
