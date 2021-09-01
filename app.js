@@ -60,27 +60,24 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/login', (req, res) => {
-  res.render('login')
-})
 
 app.get('/men', (req, res) => {
   res.render('men')
 })
 
-app.get('/women', (req, res) => {
-  res.render('women')
-})
-app.get('/newreleases', (req, res) => {
-  res.render('newreleases')
-})
 
 app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
 })
+
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
+
+// render the users-post
+app.get('/users-post', (req, res)=>{
+  res.render('users-post')
+
 })
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
@@ -99,6 +96,13 @@ app.post('/users-post', (req, res)=>{
     price: price,
     image: image
 
+
+  })
+  shoetable.save()
+  res.redirect('index') //probably change mens to index
+})
+
+
   })
   shoetable.save()
   //res.redirect('index') //probably change mens to index
@@ -108,4 +112,4 @@ app.post('/users-post', (req, res)=>{
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
-});
+})
