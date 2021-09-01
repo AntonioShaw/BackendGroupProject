@@ -60,11 +60,20 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/login', (req, res) => {
+  res.render('login')
+})
 
 app.get('/men', (req, res) => {
   res.render('men')
 })
 
+app.get('/women', (req, res) => {
+  res.render('women')
+})
+app.get('/newreleases', (req, res) => {
+  res.render('newreleases')
+})
 
 app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
@@ -79,20 +88,6 @@ app.post('/users-post', (req, res)=>{
   const description = req.body.description
   const size = req.body.size
   const style = req.body.style
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-})
-
-//mens-shoe page code
-app.get('/mens-shoes', (req, res) => {
-  res.render('mens-shoes')
-})
-app.post('/mens-shoes', (req, res) => {
-  //posting to the cart
->>>>>>> master
-=======
->>>>>>> master
   const price = req.body.price
   const image = req.body.image
 
@@ -109,6 +104,9 @@ app.post('/mens-shoes', (req, res) => {
   res.redirect('index') //probably change mens to index
 })
 
+app.get('/womenAccessories', (req, res) => {
+  res.render('womenAccessories')
+})
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
-})
+});
