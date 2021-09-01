@@ -101,12 +101,11 @@ app.post('/users-post', (req, res)=>{
 
   })
   shoetable.save()
-  res.redirect('index') //probably change mens to index
+  //res.redirect('index') //probably change mens to index
 })
 
-app.get('/womenAccessories', (req, res) => {
-  res.render('womenAccessories')
-})
+// delete or update the post
+
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
 });
