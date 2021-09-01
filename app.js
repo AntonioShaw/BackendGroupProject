@@ -38,7 +38,7 @@ app.set('views', VIEWS_PATH);
 app.set('view engine', 'mustache');
 
 // tell server to use urlencoded for body parsing (DB)
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended: false}))
 
 app.use(session({
   secret: "SuperSecretKeyThatNoOneWillGuess",
@@ -46,6 +46,12 @@ app.use(session({
   resave: true
 }))
 
+// custom middleware to toggle menu options based on user authentication
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = false
+})
+
+// tell the server which Routers to use for each url path
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 
@@ -73,6 +79,7 @@ app.get('/menAccessories', (req, res) => {
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
+})
 
 // render the users-post
 app.get('/users-post', (req, res)=>{
@@ -99,16 +106,8 @@ app.post('/users-post', (req, res)=>{
 
   })
   shoetable.save()
-  res.redirect('index') //probably change mens to index
+  res.redirect('index')
 })
-
-
-  })
-  shoetable.save()
-  //res.redirect('index') //probably change mens to index
-})
-
-// delete or update the post
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')

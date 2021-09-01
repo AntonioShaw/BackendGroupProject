@@ -5,7 +5,7 @@ function authenticate (req, res, next) {
     if(req.session) {
         if(req.session.user) {
             console.log(req.session.user)
-            res.locals.authenticated = true
+            res.locals.isAuthenticated = true
             next()
         } else {
             res.redirect('/login')
