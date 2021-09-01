@@ -78,19 +78,9 @@ app.get('/newreleases', (req, res) => {
 app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
 })
-<<<<<<< HEAD
-
-app.get('/womenAccessories', (req, res) => {
-  res.render('womenAccessories')
-})
-//mens-shoe page code
-app.get('/mens-shoes', (req, res)=>{
-  res.render('mens-shoes')
-=======
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
->>>>>>> d7ee2a77042d04137211fb71cf4034c1aafaf156
 })
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
@@ -109,13 +99,10 @@ app.post('/users-post', (req, res)=>{
     price: price,
     image: image
 
-<<<<<<< HEAD
-=======
   })
   shoetable.save()
   //res.redirect('index') //probably change mens to index
 })
->>>>>>> d7ee2a77042d04137211fb71cf4034c1aafaf156
 
 // delete or update the post
 
