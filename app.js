@@ -60,11 +60,20 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/login', (req, res) => {
+  res.render('login')
+})
 
 app.get('/men', (req, res) => {
   res.render('men')
 })
 
+app.get('/women', (req, res) => {
+  res.render('women')
+})
+app.get('/newreleases', (req, res) => {
+  res.render('newreleases')
+})
 
 app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
@@ -92,9 +101,11 @@ app.post('/users-post', (req, res)=>{
 
   })
   shoetable.save()
-  res.redirect('index') //probably change mens to index
+  //res.redirect('index') //probably change mens to index
 })
+
+// delete or update the post
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
-})
+});
