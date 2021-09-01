@@ -107,7 +107,7 @@ app.post('/users-post', (req, res)=>{
     size: size,
     style: style,
     image: image
-    price: price,
+    
 
 
   })
