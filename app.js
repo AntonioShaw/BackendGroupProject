@@ -18,6 +18,9 @@ const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 
 
+// import allUserPosts.js route (DB)
+const allUserPostsRouter = require('./routes/allUserPosts')
+
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
 
@@ -46,8 +49,21 @@ app.use(session({
   resave: true
 }))
 
+
+
+// custom middleware to toggle menu options based on user authentication
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.user == null ? false : true
+  next()
+})
+
+
+// tell the server which Routers to use for each url path (DB)
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
+app.use('/all-user-posts', authenticate, allUserPostsRouter)
+
 
 
 // set path for static css and js files (DB)
@@ -85,9 +101,6 @@ app.get('/accessories', (req, res) => {
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
 
-// render the users-post
-app.get('/users-post', (req, res)=>{
-  res.render('users-post')
 
 })
 // post to the shoe table
@@ -98,20 +111,20 @@ app.post('/users-post', (req, res)=>{
   const style = req.body.style
   const price = req.body.price
   const image = req.body.image
+  const userId = req.session.user.userId
 
   let shoetable = models.ShoeTable.build({
     name: name,
     description: description,
     size: size,
     style: style,
-    image: image
+    price: price,
+    image: image,
+    user_id: userId
+  
     
 
 
-  })
-  shoetable.save()
-  res.redirect('index') //probably change mens to index
-})
 
 
 

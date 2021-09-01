@@ -5,8 +5,25 @@
     {{>header}}
   </head>
   <body>
+    {{>menu}}
+    <div class="container">
+        <h1>All My Kicks</h1>
 
-    
+        <div class="list-group">
+            {{#shoes}}
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src={{image}} alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">{{name}}</h4>
+                  <p class="card-text">${{price}}</p>
+                  <a href="#" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+            {{/shoes}}
+        </div>
+
+    </div>
+
       
     {{>footer}}
   </body>
