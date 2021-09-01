@@ -13,11 +13,10 @@ global.models = require('./models')
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
 
+
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
 
-// import logout.js route (DB)
-const logoutRouter = require('./routes/logout')
 
 // import allUserPosts.js route (DB)
 const allUserPostsRouter = require('./routes/allUserPosts')
@@ -42,13 +41,14 @@ app.set('views', VIEWS_PATH);
 app.set('view engine', 'mustache');
 
 // tell server to use urlencoded for body parsing (DB)
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded())
 
 app.use(session({
   secret: "SuperSecretKeyThatNoOneWillGuess",
   saveUninitialized: true,
   resave: true
 }))
+
 
 
 // custom middleware to toggle menu options based on user authentication
@@ -63,6 +63,7 @@ app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
 app.use('/all-user-posts', authenticate, allUserPostsRouter)
+
 
 
 // set path for static css and js files (DB)
@@ -100,8 +101,8 @@ app.get('/accessories', (req, res) => {
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
 
-})
 
+})
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
   const name = req.body.name
@@ -124,10 +125,14 @@ app.post('/users-post', (req, res)=>{
     
 
 
-  })
+
+
+
   shoetable.save()
-  res.redirect('/')
+  //res.redirect('index') //probably change mens to index
 })
+
+// delete or update the post
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
