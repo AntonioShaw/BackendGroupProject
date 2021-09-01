@@ -13,10 +13,11 @@ global.models = require('./models')
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
 
-
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
 
+// import logout.js route (DB)
+const logoutRouter = require('./routes/logout')
 
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
@@ -46,14 +47,18 @@ app.use(session({
   resave: true
 }))
 
+
 // custom middleware to toggle menu options based on user authentication
 app.use((req, res, next) => {
-  res.locals.isAuthenticated = false
+  res.locals.isAuthenticated = req.session.user == null ? false : true
+  next()
 })
+
 
 // tell the server which Routers to use for each url path
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
 
 
 // set path for static css and js files (DB)
@@ -86,6 +91,7 @@ app.get('/users-post', (req, res)=>{
   res.render('users-post')
 
 })
+
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
   const name = req.body.name
