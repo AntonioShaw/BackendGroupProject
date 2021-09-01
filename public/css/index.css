@@ -9,6 +9,49 @@
       rgba(46, 60, 126, 1) 79%);
       margin: 0;
       font-family: "Audiowide", sans-serif;
+
+  }
+  #outerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 95%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+  }
+    
+  .row {
+    justify-content: center;
+  }
+
+  .shoebox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 30px;
+    max-width: 600px;
+    background-color:white;
+  }
+
+    .URL {
+    width: 90%;
+    height: auto;
+  }
+
+  .detailsBtn {
+  
+    background-color: #555;
+    color: white;
+    font-size: 15px;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
   }
 
   #headerDiv {
@@ -34,7 +77,6 @@
   #header {
     text-align: center;
     font-family: "Audiowide", sans-serif;
-    /* font-style: italic; */
     font-weight: 80em;
     font-size: 25px;
     color: silver;
@@ -49,7 +91,6 @@
   #menu {
     text-align: center;
     font-family: "Audiowide", sans-serif;
-    /* font-style: italic; */
     font-weight: 80em;
     font-size: 25px;
     color: silver;
@@ -62,77 +103,9 @@
     background-color: rgb(17, 11, 105);
   }
 
-  #outerContainer {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 8%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: auto;
-    align-items: center;
-    height: 90%;
-    width: 95%;
-    margin: auto;
-    /* margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto; */
-    overflow: auto;
-    /* border-radius: 20px; */
-    background-color: rgba(245, 245, 245, 0.568);
-  }
-    /* .container {
-      display: flex;
-      flex-direction: row;
-      position: relative;
-      height: 35px;
-      width: 20px;
-      background-color: blanchedalmond;
-    } */
-  .One {
-    background-color: white;
-    position: relative;
-    width: 33%;
-  }
-  .Two {
-    background-color: whitesmoke;
-  }
-  .Three {
-    background-color: gray;
-  }
 
-  .URL {
-    width: 29%;
-    height: auto;
-  }
+  
 
-  .bidBtn {
-    position: absolute;
-    top: 70%;
-    left: 15%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #555;
-    color: white;
-    font-size: 10px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  
-  #deleteButton {
-    font-size: 30px;
-    color: aliceblue;
-    padding: 15px;
-    height: auto;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    border-radius: 15px;
-    background-color: rgb(30, 30, 31);
+  @media screen and (max-width: 765px) {
+
   }
