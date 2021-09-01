@@ -80,6 +80,7 @@ app.post('/users-post', (req, res)=>{
   const size = req.body.size
   const style = req.body.style
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 })
 
@@ -89,6 +90,8 @@ app.get('/mens-shoes', (req, res) => {
 })
 app.post('/mens-shoes', (req, res) => {
   //posting to the cart
+>>>>>>> master
+=======
 >>>>>>> master
   const price = req.body.price
   const image = req.body.image
