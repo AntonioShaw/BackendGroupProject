@@ -126,10 +126,11 @@ global.models = require('./models')
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
 
-
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
 
+// import logout.js route (DB)
+const logoutRouter = require('./routes/logout')
 
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
@@ -151,7 +152,7 @@ app.set('views', VIEWS_PATH);
 app.set('view engine', 'mustache');
 
 // tell server to use urlencoded for body parsing (DB)
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended: false}))
 
 app.use(session({
   secret: "SuperSecretKeyThatNoOneWillGuess",
@@ -159,8 +160,18 @@ app.use(session({
   resave: true
 }))
 
+
+// custom middleware to toggle menu options based on user authentication
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.user == null ? false : true
+  next()
+})
+
+
+// tell the server which Routers to use for each url path
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
 
 
 // set path for static css and js files (DB)
@@ -186,12 +197,14 @@ app.get('/menAccessories', (req, res) => {
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
+})
 
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
 
 })
+
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
   const name = req.body.name
@@ -212,16 +225,8 @@ app.post('/users-post', (req, res)=>{
 
   })
   shoetable.save()
-  res.redirect('index') //probably change mens to index
+  res.redirect('index')
 })
-
-
-  })
-  shoetable.save()
-  //res.redirect('index') //probably change mens to index
-})
-
-// delete or update the post
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
