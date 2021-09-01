@@ -61,13 +61,24 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/men', (req, res) => {
-  res.render('men')
+app.get('/athletic', (req, res) => {
+  res.render('athletic')
 })
 
+app.get('/streetwear', (req, res) => {
+  res.render('streetwear')
+})
 
-app.get('/menAccessories', (req, res) => {
-  res.render('menAccessories')
+app.get('/casual', (req, res) => {
+  res.render('casual')
+})
+
+app.get('/dress', (req, res) => {
+  res.render('dress')
+})
+
+app.get('/accessories', (req, res) => {
+  res.render('accessories')
 })
 
 // render the users-post
@@ -93,8 +104,8 @@ app.post('/users-post', (req, res)=>{
     description: description,
     size: size,
     style: style,
-    price: price,
     image: image
+    
 
 
   })
