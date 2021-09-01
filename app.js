@@ -19,6 +19,9 @@ const loginRouter = require('./routes/login')
 // import logout.js route (DB)
 const logoutRouter = require('./routes/logout')
 
+// import allUserPosts.js route (DB)
+const allUserPostsRouter = require('./routes/allUserPosts')
+
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
 
@@ -55,10 +58,11 @@ app.use((req, res, next) => {
 })
 
 
-// tell the server which Routers to use for each url path
+// tell the server which Routers to use for each url path (DB)
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
+app.use('/all-user-posts', authenticate, allUserPostsRouter)
 
 
 // set path for static css and js files (DB)
@@ -84,11 +88,6 @@ app.get('/menAccessories', (req, res) => {
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
-})
-
-// render the users-post
-app.get('/users-post', (req, res)=>{
-  res.render('users-post')
 
 })
 
@@ -100,6 +99,7 @@ app.post('/users-post', (req, res)=>{
   const style = req.body.style
   const price = req.body.price
   const image = req.body.image
+  const userId = req.session.user.userId
 
   let shoetable = models.ShoeTable.build({
     name: name,
@@ -107,12 +107,12 @@ app.post('/users-post', (req, res)=>{
     size: size,
     style: style,
     price: price,
-    image: image
-
+    image: image,
+    user_id: userId
 
   })
   shoetable.save()
-  res.redirect('index')
+  res.redirect('/')
 })
 
 app.listen(PORT, () => {
