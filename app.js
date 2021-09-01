@@ -69,9 +69,15 @@ app.get('/men', (req, res) => {
 app.get('/menAccessories', (req, res) => {
   res.render('menAccessories')
 })
+
 // render the users-post
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
+
+// render the users-post
+app.get('/users-post', (req, res)=>{
+  res.render('users-post')
+
 })
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
@@ -90,10 +96,19 @@ app.post('/users-post', (req, res)=>{
     price: price,
     image: image
 
+
   })
   shoetable.save()
   res.redirect('index') //probably change mens to index
 })
+
+
+  })
+  shoetable.save()
+  //res.redirect('index') //probably change mens to index
+})
+
+// delete or update the post
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
