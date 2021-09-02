@@ -2,7 +2,7 @@ const express = require('express')
 const formidable = require('formidable')
 const router = express.Router()
 
-router.get('/users-post', async (req, res) => {
+router.get('/', async (req, res) => {
 
     let shoes = await models.ShoeTable.findAll({
         where: {
@@ -10,7 +10,7 @@ router.get('/users-post', async (req, res) => {
         }
     })
 
-    res.render('users/users-post', {shoes: shoes})
+    res.render('allUserPosts', {shoes: shoes})
 })
 
 function uploadFile(req, callback) {
