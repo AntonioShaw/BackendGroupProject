@@ -1,31 +1,153 @@
 <html lang="en">
 <head>
     {{> header}}
-
-    
-<link rel="stylesheet" href="index.css"></link> 
-<script type="text/javascript" src="jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
 </head>
-<body>
-<h1>Athletic</a></h1>
-
-<div class="container">
-    {{> menu}}
+<body id="indexBody">
 
 
+    <div id="container">
+    <h1> Athletic </h1>
+        {{> menu}}
+
+        <ul class="list-group">
+            {{#products}}
+
+            <img src="/uploads/{{imageURL}}" class="prodcut-preview-image" />
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/products/{{id}}"> {{title}} </a>
+                {{title}}
+                <small>${{price}}>/small>
+            </li>
+
+            {{/products}}
+        </ul>
+
+
+        <div id="outerContainer">
+
+            <div class="row">
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox One">
+
+                    Allen Edmonds: McTavish
+                    <img class="URL" src="https://tinyurl.com/2cv3fyms" alt="Black dress shoe with a blue sole">
+                    <form method="POST" action="/details">
+                        <form method="POST" action="/details">
+                            <button class="detailsBtn">Details</button>
+                        </form>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox Two">
+
+                    Cole Haan: GrandPro Rally
+                    <img class="URL" src="https://tinyurl.com/9sn6nc6v" alt="Gray canvas sneakers with a white sole">
+                    <form method="POST" action="/details">
+                        <form method="POST" action="/details">
+                            <button class="detailsBtn">Details</button>
+                        </form>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox Three">
+
+                    Sperry: Original 2-Eye
+                    <img class="URL" src="https://tinyurl.com/bxrkn3bu" alt="Tan boat shoes with a cream sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+
+                </div>
+
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox1
+                    <img class="URL" src="https://tinyurl.com/2cv3fyms" alt="Black dress shoe with a blue sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox2
+                    <img class="URL" src="https://tinyurl.com/9sn6nc6v" alt="Gray canvas sneakers with a white sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox3
+                    <img class="URL" src="https://tinyurl.com/bxrkn3bu" alt="Tan boat shoes with a cream sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+                </div>
+
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox1
+                    <img class="URL" src="https://tinyurl.com/2cv3fyms" alt="Black dress shoe with a blue sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox2
+                    <img class="URL" src="https://tinyurl.com/9sn6nc6v" alt="Gray canvas sneakers with a white sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox3
+                    <img class="URL" src="https://tinyurl.com/bxrkn3bu" alt="Tan boat shoes with a cream sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+                </div>
+
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox1
+                    <img class="URL" src="https://tinyurl.com/2cv3fyms" alt="Black dress shoe with a blue sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox2
+                    <img class="URL" src="https://tinyurl.com/9sn6nc6v" alt="Gray canvas sneakers with a white sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+
+                </div>
+                <div class="col-sm-1 col-sm-2 col-md-3 col-lg-3 col-xl-4 shoebox">
+
+                    Shoebox3
+                    <img class="URL" src="https://tinyurl.com/bxrkn3bu" alt="Tan boat shoes with a cream sole">
+                    <form method="POST" action="/details">
+                        <button class="detailsBtn">Details</button>
+                    </form>
+                </div>
 
 
 
+            </div>
+        </div>
 
-</div>
-{{> sortBy}}
-{{> msize}}
-
-  
-
-    
-    {{> footer}}
-
+        {{> footer}}
 </body>
+
 
 </html>

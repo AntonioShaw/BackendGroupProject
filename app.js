@@ -13,10 +13,12 @@ global.models = require('./models')
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
 
+
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
 
-// import logout.js route (DB)
+
+// import logout.js route (AS)
 const logoutRouter = require('./routes/logout')
 
 // import allUserPosts.js route (DB)
@@ -35,20 +37,21 @@ const VIEWS_PATH = path.join(__dirname, './views');
 
 
 // set up express to use mustache-express as template page (DB)
-app.engine ('mustache', mustacheExpress(VIEWS_PATH + '/partials','.mustache'));
+app.engine ('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'));
 // set location of pages to views directory (DB)
 app.set('views', VIEWS_PATH);
 // set page extention to mustache (DB)
 app.set('view engine', 'mustache');
 
 // tell server to use urlencoded for body parsing (DB)
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded())
 
 app.use(session({
   secret: "SuperSecretKeyThatNoOneWillGuess",
   saveUninitialized: true,
   resave: true
 }))
+
 
 
 // custom middleware to toggle menu options based on user authentication
@@ -63,6 +66,7 @@ app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
 app.use('/all-user-posts', authenticate, allUserPostsRouter)
+
 
 
 // set path for static css and js files (DB)
@@ -100,6 +104,7 @@ app.get('/accessories', (req, res) => {
 app.get('/users-post', (req, res)=>{
   res.render('users-post')
 
+
 })
 
 // post to the shoe table
@@ -112,6 +117,7 @@ app.post('/users-post', (req, res)=>{
   const image = req.body.image
   const userId = req.session.user.userId
 
+
   let shoetable = models.ShoeTable.build({
     name: name,
     description: description,
@@ -123,7 +129,7 @@ app.post('/users-post', (req, res)=>{
 
   })
   shoetable.save()
-  res.redirect('/')
+
 })
 
 app.listen(PORT, () => {
