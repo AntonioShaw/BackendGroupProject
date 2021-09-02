@@ -1,111 +1,105 @@
-
 #indexBody {
-    background: rgb(140, 146, 176);
-    background: linear-gradient(
-      90deg,
-      rgba(140, 146, 176, 0.9332107843137255) 2%,
-      rgba(59, 82, 193, 1) 33%,
-      rgba(67, 96, 226, 1) 53%,
-      rgba(46, 60, 126, 1) 79%);
-      margin: 0;
-      font-family: "Audiowide", sans-serif;
+  background: rgb(140, 146, 176);
+  background: linear-gradient(
+    90deg,
+    rgba(140, 146, 176, 0.9332107843137255) 2%,
+    rgba(59, 82, 193, 1) 33%,
+    rgba(67, 96, 226, 1) 53%,
+    rgba(46, 60, 126, 1) 79%
+  );
+  margin: 0;
+  font-family: "Audiowide", sans-serif;
+}
 
-  }
-  #outerContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-    width: 95%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 15px;
-  }
-    
-  .row {
-    justify-content: center;
-  }
+#outerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  width: 95%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 15px;
+}
 
-  .shoebox {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    margin: 30px;
-    max-width: 600px;
-    background-color:white;
-  }
+.row {
+  justify-content: center;
+}
 
-    .URL {
-    width: 90%;
-    height: auto;
-  }
+.shoebox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 30px;
+  max-width: 600px;
+  background-color: white;
+}
 
-  .detailsBtn {
-  
-    background-color: #555;
-    color: white;
-    font-size: 15px;
-    padding: 10px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+.URL {
+  width: 90%;
+  height: auto;
+}
 
-  #headerDiv {
-    display: flex;
-    flex-direction:row;
-    position: relative;
-    margin-top: auto;
-    /* bottom: auto;
-    left: auto;
-    right: auto; */
-    padding: auto;
-    text-align: center;
-    align-items: left;
-    height: 10%;
-    width: 95%;
-    /* margin: auto; */
-    overflow: auto;
-    border-radius: 20px;
-  ;
+.detailsBtn {
+  background-color: #555;
+  color: white;
+  font-size: 15px;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-  }
+#headerDiv {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: auto;
+  /* bottom: auto;
+  left: auto;
+  right: auto; */
+  padding: auto;
+  text-align: center;
+  align-items: left;
+  height: 10%;
+  width: 95%;
+  /* margin: auto; */
+  overflow: auto;
+  border-radius: 20px;
+}
 
-  #header {
-    text-align: center;
-    font-family: "Audiowide", sans-serif;
-    font-weight: 80em;
-    font-size: 25px;
-    color: silver;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    border-radius: 10px;
-    background-color: rgb(17, 11, 105);
-  }
-  #menu {
-    text-align: center;
-    font-family: "Audiowide", sans-serif;
-    font-weight: 80em;
-    font-size: 25px;
-    color: silver;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    border-radius: 10px;
-    background-color: rgb(17, 11, 105);
-  }
+#header {
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 80em;
+  font-size: 25px;
+  color: silver;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;
+  background-color: rgb(17, 11, 105);
+}
 
+#menu {
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 80em;
+  font-size: 25px;
+  color: silver;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;
+  background-color: rgb(17, 11, 105);
+}
 
-  
-
-  @media screen and (max-width: 765px) {
-
-  }
+@media screen and (max-width: 765px) {
+}
