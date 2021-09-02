@@ -29,7 +29,7 @@ const productDetailsRouter = require('./routes/productDetails')
 global.bcrypt = require('bcryptjs')
 
 // import authenticate function (DB)
-const authenticate = require('./middleware/authentication')
+global.authenticate = require('./middleware/authentication')
 
 // create path for partial (DB)
 const VIEWS_PATH = path.join(__dirname, './views');
@@ -68,7 +68,6 @@ app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
 app.use('/all-user-posts', authenticate, allUserPostsRouter)
 app.use('/product-details', productDetailsRouter)
-
 
 
 // set path for static css and js files (DB)

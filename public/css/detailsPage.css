@@ -1,0 +1,13 @@
+body {
+    background: rgb(140, 146, 176);
+    background: linear-gradient(
+      90deg,
+      rgba(140, 146, 176, 0.9332107843137255) 2%,
+      rgba(59, 82, 193, 1) 33%,
+      rgba(67, 96, 226, 1) 53%,
+      rgba(46, 60, 126, 1) 79%
+    );
+    margin: 0;
+    font-family: "Audiowide", sans-serif;
+}
+
