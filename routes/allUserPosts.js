@@ -1,7 +1,8 @@
 const express = require('express')
-const router = express()
+const formidable = require('formidable')
+const router = express.Router()
 
-router.get('/', async (req, res) => {
+router.get('/users-post', async (req, res) => {
 
     let shoes = await models.ShoeTable.findAll({
         where: {
@@ -9,10 +10,28 @@ router.get('/', async (req, res) => {
         }
     })
 
-    res.render('allUserPosts', {shoes: shoes})
+    res.render('users/users-post', {shoes: shoes})
 })
 
+function uploadFile(req, callback) {
 
+    new formidable.IncomingForm().parse(req)
+    .on('fileBegin', (name, file) => {
+        
+        file.path = __basedir + '/uploads/' + file.name
+    })
+    .on('file', (name, file) => {
+       callback(file.name) 
+    })
+}
+
+router.post('/upload', (req, res) => {
+
+    uploadFile(req, (photoURL) => {
+        res.send("UPLOAD")
+    })
+
+})
 
 
 

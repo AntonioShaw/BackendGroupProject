@@ -19,6 +19,8 @@ const loginRouter = require('./routes/login')
 // import logout.js route (AS)
 const logoutRouter = require('./routes/logout')
 
+
+
 // import allUserPosts.js route (DB)
 const allUserPostsRouter = require('./routes/allUserPosts')
 
@@ -34,6 +36,7 @@ global.authenticate = require('./middleware/authentication')
 // create path for partial (DB)
 const VIEWS_PATH = path.join(__dirname, './views');
 
+global.__basedir = __dirname
 
 
 
