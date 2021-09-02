@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 8080
+
 const express = require('express');
 const app = express();
 
@@ -136,6 +136,6 @@ app.post('/users-post', (req, res)=>{
 
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('Server is running... you better go catch it')
 })
