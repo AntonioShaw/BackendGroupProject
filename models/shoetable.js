@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.ShoeTable.belongsTo(models.User, {as: 'user', foreignKey: 'user_id'})
     }
   };
   ShoeTable.init({

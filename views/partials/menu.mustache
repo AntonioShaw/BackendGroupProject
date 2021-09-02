@@ -15,49 +15,42 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/men">Athletic</a>
+          <a class="nav-link" href="/athletic">Athletic</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/women">Streetwear</a>
+          <a class="nav-link" href="/streetwear">Streetwear</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/women">Casual</a>
+          <a class="nav-link" href="/casual">Casual</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/newreleases">Dress</a>
+          <a class="nav-link" href="/dress">Dress</a>
+        </li>
+       <!--<li class="nav-item">
+          <a class="nav-link" href="/accessories">Accesories</a>
+        </li> -->
 
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Accessories
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" id="menAccessories" value="Men" href="/menAccessories">Men</a>
-            <a class="dropdown-item" id="womenAccessories" value="Women" href="womenAccessories">Women</a>
-          </div>
-        </li>
 
-        {{^authenticated}}
+        {{^isAuthenticated}}
         <li class="nav-item">
           <a class="nav-link" href="/register">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li>
-        {{/authenticated}}
+        {{/isAuthenticated}}
 
-        {{#authenticated}}
+        {{#isAuthenticated}}
         <li class="nav-item">
-          <a class="nav-link" href="#">Sell a Pair</a>
+          <a class="nav-link" href="/users-post">Sell a Pair</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">All My Kicks</a>
+          <a class="nav-link" href="/all-user-posts">All My Kicks</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Log Out</a>
         </li>
-        {{/authenticated}}
+        {{/isAuthenticated}}
 
       </ul>
     </div>
