@@ -34,6 +34,7 @@ const authenticate = require('./middleware/authentication')
 // create path for partial (DB)
 const VIEWS_PATH = path.join(__dirname, './views');
 
+global.__basedir = __dirname
 
 
 
