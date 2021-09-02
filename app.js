@@ -13,16 +13,17 @@ global.models = require('./models')
 // import register.js route (DB)
 const registerRouter = require('./routes/register')
 
-
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
-
 
 // import logout.js route (AS)
 const logoutRouter = require('./routes/logout')
 
 // import allUserPosts.js route (DB)
 const allUserPostsRouter = require('./routes/allUserPosts')
+
+// import productDetails.js route (DB)
+const productDetailsRouter = require('./routes/productDetails')
 
 // import bcryptjs package (DB)
 global.bcrypt = require('bcryptjs')
@@ -66,6 +67,7 @@ app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
 app.use('/all-user-posts', authenticate, allUserPostsRouter)
+app.use('/product-details', productDetailsRouter)
 
 
 
@@ -125,8 +127,8 @@ app.post('/users-post', (req, res)=>{
     style: style,
     price: price,
     image: image,
-    user_id: userId,
-    })
+    user_id: userId
+  })
   
   shoetable.save()
 
