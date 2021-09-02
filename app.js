@@ -18,6 +18,9 @@ const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 
 
+// import logout.js route (AS)
+const logoutRouter = require('./routes/logout')
+
 // import allUserPosts.js route (DB)
 const allUserPostsRouter = require('./routes/allUserPosts')
 
@@ -34,7 +37,7 @@ const VIEWS_PATH = path.join(__dirname, './views');
 
 
 // set up express to use mustache-express as template page (DB)
-app.engine ('mustache', mustacheExpress(VIEWS_PATH + '/partials','.mustache'));
+app.engine ('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'));
 // set location of pages to views directory (DB)
 app.set('views', VIEWS_PATH);
 // set page extention to mustache (DB)
@@ -113,6 +116,7 @@ app.post('/users-post', (req, res)=>{
   const image = req.body.image
   const userId = req.session.user.userId
 
+
   let shoetable = models.ShoeTable.build({
     name: name,
     description: description,
@@ -121,10 +125,8 @@ app.post('/users-post', (req, res)=>{
     price: price,
     image: image,
     user_id: userId
-
-
-
-
+  })
+  
   shoetable.save()
   //res.redirect('index') //probably change mens to index
 })
