@@ -73,7 +73,6 @@ app.use('/all-user-posts', authenticate, allUserPostsRouter)
 app.use('/product-details', productDetailsRouter)
 
 
-
 // set path for static css and js files (DB)
 app.use(express.static(__dirname + '/public'));
 
