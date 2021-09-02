@@ -125,8 +125,9 @@ app.post('/users-post', (req, res)=>{
     price: price,
     image: image,
     user_id: userId,
+    })
   
-  //shoetable.save()
+  shoetable.save()
   //res.redirect('index') //probably change mens to index
 })
 
