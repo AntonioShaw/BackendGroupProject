@@ -19,6 +19,8 @@ const loginRouter = require('./routes/login')
 // import logout.js route (AS)
 const logoutRouter = require('./routes/logout')
 
+
+
 // import allUserPosts.js route (DB)
 const allUserPostsRouter = require('./routes/allUserPosts')
 
