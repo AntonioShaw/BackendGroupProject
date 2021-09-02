@@ -103,3 +103,24 @@
 
 @media screen and (max-width: 765px) {
 }
+
+/* styling the users post*/
+
+#usersPostForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 100px;
+    color: white;
+}
+
+#usersPostForm > label {
+    display: block;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    font-size: 2em;
+    font-weight: bold;
+}

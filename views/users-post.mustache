@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{> header}}
-
-    <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Document</title>
 </head>
 <body id="indexBody">
      {{>menu}}
-    <form action="/users-post" method="POST">
+    <form action="/users-post" method="POST" id="usersPostForm">
     <label for="">Title</label>
     <br>
     <input type="text" placeholder="" name="name">
