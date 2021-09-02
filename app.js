@@ -106,6 +106,7 @@ app.get('/users-post', (req, res)=>{
 
 
 })
+
 // post to the shoe table
 app.post('/users-post', (req, res)=>{
   const name = req.body.name
@@ -128,10 +129,8 @@ app.post('/users-post', (req, res)=>{
     })
   
   shoetable.save()
-  //res.redirect('index') //probably change mens to index
-})
 
-// delete or update the post
+})
 
 app.listen(PORT, () => {
   console.log('Server is running... you better go catch it')
