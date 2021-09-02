@@ -1,10 +1,4 @@
 
-body {
-    margin: 0px;
-    padding: 0px;
-    padding-bottom: 100px;
-}
-
 body > form {
     display: flex;
     flex-direction: column;
