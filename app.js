@@ -16,7 +16,7 @@ const registerRouter = require('./routes/register')
 
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
-// const logoutRouter = require('./routes/logout')
+
 
 // import logout.js route (AS)
 const logoutRouter = require('./routes/logout')
