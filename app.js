@@ -115,7 +115,7 @@ app.post('/users-post', (req, res)=>{
   const price = req.body.price
   const image = req.body.image
   const userId = req.session.user.userId
-})
+
 
   let shoetable = models.ShoeTable.build({
     name: name,
