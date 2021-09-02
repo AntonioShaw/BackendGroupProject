@@ -40,7 +40,8 @@
 
     .URL {
     width: 90%;
-    height: auto;
+    height: 100%;
+
   }
 
   .detailsBtn {
@@ -109,3 +110,5 @@
   @media screen and (max-width: 765px) {
 
   }
+
+ 

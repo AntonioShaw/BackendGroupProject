@@ -16,6 +16,7 @@ const registerRouter = require('./routes/register')
 
 // import login.js route (DB)
 const loginRouter = require('./routes/login')
+const logoutRouter = require('./routes/logout')
 
 
 // import allUserPosts.js route (DB)
@@ -121,7 +122,7 @@ app.post('/users-post', (req, res)=>{
     price: price,
     image: image,
     user_id: userId
-  
+  })  
     
 
 
@@ -129,7 +130,7 @@ app.post('/users-post', (req, res)=>{
 
 
   shoetable.save()
-  //res.redirect('index') //probably change mens to index
+//res.redirect('index') //probably change mens to index
 })
 
 // delete or update the post
