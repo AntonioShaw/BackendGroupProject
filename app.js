@@ -31,7 +31,7 @@ const productDetailsRouter = require('./routes/productDetails')
 global.bcrypt = require('bcryptjs')
 
 // import authenticate function (DB)
-global.authenticate = require('./middleware/authentication')
+const authenticate = require('./middleware/authentication')
 
 // create path for partial (DB)
 const VIEWS_PATH = path.join(__dirname, './views');
