@@ -2,6 +2,9 @@
 const express = require('express');
 const app = express();
 
+// have Heroku assign port to app (AS)
+const PORT = process.env.PORT || 8080
+
 const mustacheExpress = require('mustache-express');
 
 const path = require('path');
