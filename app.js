@@ -82,6 +82,8 @@ app.use(express.static(__dirname + '/public'));
 // static folder for images
 app.use('/uploads', express.static('uploads'))
 
+app.use('/images', express.static('images'))
+
 app.get('/', (req, res) => {
   res.render('index')
 })
